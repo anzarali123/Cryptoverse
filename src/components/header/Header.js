@@ -8,7 +8,6 @@ import {
   Typography,
 } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
 
 import { useNavigate } from "react-router-dom";
 import { CryptoState } from "../../context/CryptoContext";
