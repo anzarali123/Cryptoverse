@@ -14,9 +14,8 @@ import {
   TableHead,
   TableRow,
   Typography,
-  TextField,
 } from "@mui/material";
-import { numberWithCommas } from "../Carousel/Carousel";
+import { numberWithCommas } from "../carousel/Carousel";
 
 import { useNavigate } from "react-router-dom";
 
@@ -61,7 +60,7 @@ const CoinsTable = () => {
       <Container style={{ textAlign: "center" }}>
         <Typography
           variant="h4"
-          style={{ margin: 18, fontFamily: "Montserrat" }}
+          style={{ margin: "18px", fontFamily: "Montserrat" }}
         >
           Cryptocurrency Prices by Market Cap
         </Typography>
@@ -69,7 +68,7 @@ const CoinsTable = () => {
           type="search"
           placeholder="Search for a cryptocurrency..."
           style={{
-            marginBottom: 20,
+            marginBottom: "20px",
             width: "100%",
             padding: "10px",
             fontSize: "20px",
@@ -125,13 +124,13 @@ const CoinsTable = () => {
                           scope="row"
                           style={{
                             display: "flex",
-                            gap: 15,
+                            gap: "15px",
                           }}
                         >
                           <img
                             src={row?.image}
                             alt={row.name}
-                            height="50"
+                            height="50px"
                             style={{ marginBottom: 10 }}
                           />
                           <div
@@ -140,7 +139,7 @@ const CoinsTable = () => {
                             <span
                               style={{
                                 textTransform: "uppercase",
-                                fontSize: 22,
+                                fontSize: "22px",
                               }}
                             >
                               {row.symbol}
@@ -158,7 +157,7 @@ const CoinsTable = () => {
                           align="right"
                           style={{
                             color: profit > 0 ? "rgb(14, 203, 129)" : "red",
-                            fontWeight: 500,
+                            fontWeight: "500",
                           }}
                         >
                           {profit && "+"}
@@ -182,7 +181,7 @@ const CoinsTable = () => {
         <Pagination
           count={Number((handleSearch()?.length / 10).toFixed(0))}
           style={{
-            padding: 20,
+            padding: "20px",
             width: "100%",
             display: "flex",
             justifyContent: "center",

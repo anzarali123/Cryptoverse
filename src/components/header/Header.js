@@ -14,6 +14,9 @@ import { CryptoState } from "../../context/CryptoContext";
 
 const darkTheme = createTheme({
   palette: {
+    primary: {
+      main: "#ffffff",
+    },
     mode: "dark",
   },
 });
@@ -21,6 +24,7 @@ const darkTheme = createTheme({
 const Header = () => {
   const { currency, setCurrency } = CryptoState();
   const navigate = useNavigate();
+
   return (
     <ThemeProvider theme={darkTheme}>
       <AppBar color="transparent" position="static">
@@ -29,8 +33,8 @@ const Header = () => {
             <img
               style={{ cursor: "pointer" }}
               onClick={() => navigate("/")}
-              width={50}
-              height={50}
+              width="50px"
+              height="50px"
               src="https://i.ibb.co/Z11pcGG/cryptocurrency.png"
               alt="Logo"
             />
@@ -38,7 +42,7 @@ const Header = () => {
               onClick={() => navigate("/")}
               sx={{
                 flex: 1,
-                fontSize: "30px",
+                fontSize: "30",
                 color: "white",
                 fontFamily: "Montserrat",
                 fontWeight: "bold",
@@ -51,7 +55,7 @@ const Header = () => {
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
               variant="outlined"
-              sx={{ width: 100, height: 40, marginLeft: 15 }}
+              sx={{ width: "100px", height: "40px", marginLeft: "15px" }}
             >
               <MenuItem value="USD">USD</MenuItem>
               <MenuItem value="INR">INR</MenuItem>

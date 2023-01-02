@@ -1,29 +1,24 @@
-import { Typography } from "@mui/material";
-import { Container, textTransform } from "@mui/system";
-import Carousel from "../Carousel/Carousel";
+import { Container, makeStyles, Typography } from "@mui/material";
+import Carousel from "../carousel/Carousel";
 
-const banner = {
-  background: "#312e81",
-};
-
-const bannerContent = {
-  height: "400px",
-  display: "flex",
-  flexDirection: "column",
-  paddingTop: "10px",
-  justifyContent: "space-around",
-};
-const Banner = () => {
+function Banner() {
   return (
-    <div style={banner}>
-      <Container sx={bannerContent}>
+    <div style={{ background: "#312e81" }}>
+      <Container
+        sx={{
+          height: "400px",
+          display: "flex",
+          flexDirection: "column",
+          paddingTop: "25px",
+          justifyContent: "space-around",
+        }}
+      >
         <div
           style={{
             display: "flex",
             height: "40%",
             flexDirection: "column",
             justifyContent: "center",
-            alignItems: "center",
             textAlign: "center",
           }}
         >
@@ -31,7 +26,7 @@ const Banner = () => {
             variant="h2"
             style={{
               fontWeight: "bold",
-              marginBottom: "10px",
+              marginBottom: "15px",
               fontFamily: "Montserrat",
             }}
           >
@@ -52,6 +47,6 @@ const Banner = () => {
       </Container>
     </div>
   );
-};
+}
 
 export default Banner;

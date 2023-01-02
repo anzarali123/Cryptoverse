@@ -4,11 +4,6 @@ import { CryptoState } from "../../context/CryptoContext";
 import AliceCarousel from "react-alice-carousel";
 import { Link } from "react-router-dom";
 
-const carouselStyle = {
-  height: "100%",
-  display: "flex",
-  alignItems: "center",
-};
 const responsive = {
   0: {
     items: 2,
@@ -16,14 +11,6 @@ const responsive = {
   512: {
     items: 4,
   },
-};
-const carouselItem = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  cursor: "pointer",
-  textTransform: "uppercase",
-  color: "white",
 };
 
 export function numberWithCommas(x) {
@@ -49,22 +36,38 @@ const Carousel = () => {
       current_price,
     } = coin;
     return (
-      <Link style={carouselItem} to={`/coins/${id}`} key={id}>
-        <img src={image} alt={name} height="80" style={{ marginBottom: 10 }} />
+      <Link
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          cursor: "pointer",
+          textTransform: "uppercase",
+          color: "white",
+        }}
+        to={`/coins/${id}`}
+        key={id}
+      >
+        <img
+          src={image}
+          alt={name}
+          height="80px"
+          style={{ marginBottom: 10 }}
+        />
         <span>
           {symbol}
           &nbsp;
           <span
             style={{
               color: profit > 0 ? "rgb(14, 203, 129)" : "red",
-              fontWeight: 500,
+              fontWeight: "500",
             }}
           >
             {profit && "+"}
             {price_change_percentage_24h?.toFixed(2)}%
           </span>
         </span>
-        <span style={{ fontSize: 22, fontWeight: 500 }}>
+        <span style={{ fontSize: "22px", fontWeight: "500" }}>
           {symbol}
           {numberWithCommas(current_price.toFixed(2))}
         </span>
@@ -78,7 +81,7 @@ const Carousel = () => {
     setTrending(data);
   };
   return (
-    <div style={carouselStyle}>
+    <div style={{ height: "50%", display: "flex", alignItems: "center" }}>
       <AliceCarousel
         mouseTracking
         infinite
