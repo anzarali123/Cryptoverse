@@ -9,6 +9,8 @@ import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { HistoricalChart } from "../../config/api";
 import { CryptoState } from "../../context/CryptoContext";
+import SelectButton from "../selectButton/SelectButton";
+import { chartDays } from "../../config/data";
 
 import {
   Chart as ChartJS,
@@ -76,7 +78,7 @@ const CoinInfo = ({ coin }) => {
   return (
     <ThemeProvider theme={darkTheme}>
       <Container>
-        {!historicData ? (
+        {!historicData | (flag === false) ? (
           <CircularProgress
             style={{ color: "gold" }}
             size={250}
@@ -111,7 +113,7 @@ const CoinInfo = ({ coin }) => {
                 },
               }}
             />
-            {/* <div
+            <div
               style={{
                 display: "flex",
                 marginTop: 20,
@@ -131,7 +133,7 @@ const CoinInfo = ({ coin }) => {
                   {day.label}
                 </SelectButton>
               ))}
-            </div> */}
+            </div>
           </>
         )}
       </Container>
