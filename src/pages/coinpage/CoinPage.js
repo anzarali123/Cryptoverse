@@ -10,6 +10,7 @@ import { numberWithCommas } from "../../components/carousel/Carousel";
 
 const Container = styled(Box)(({ theme }) => ({
   display: "flex",
+  alignItems: "flex-start",
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
     alignItems: "center",
